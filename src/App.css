@@ -1,15 +1,81 @@
 body{
-  background: url('./Assets/Images/bg.png') no-repeat center center/cover;
+  background: url('./Assets/Images/bg.png') no-repeat center center;
+  margin: 0;
+  padding: 0;
 }
 
-.App {
+.Home {
   text-align: center;
-  /* height: 100vh; */
 }
+
+/* header */
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(9, 9, 9, 0.2);
+  font-size: larger;
+  color: #003566;
+  background-color: rgb(232 232 232);
+}
+
+#logo{
+  width: 70px;
+  height: 50px;
+  margin: 10px;
+}
+
+header p {
+  font-size: 0.75em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: center;
+  margin: 0px 10px;
+  margin-top: 14px;
+}
+
+#companyName{
+  font-family: cursive;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+header .navsection{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 50%;
+}
+
+header #navlinksection{
+  justify-content: end;
+  padding-right: 5%;
+}
+
+header .navlinks{
+  margin: 0 3%;
+  text-decoration: none;
+  color: #6a040f;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header .navlinks:hover{
+  color: #ffa900;
+}
+
+/* section */
 
 #menu{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .table {
@@ -41,30 +107,18 @@ tbody tr:nth-child(odd){
 }
 
 .column{
-  display: inline-table;
-}
-
-.last_col_table{
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 #bill{
   margin: 10px;
 }
 
-#logo{
-  width: 70px;
-  height: 50px;
-  margin: 10px;
-}
-
-header{
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  margin-bottom: 20px;
-  box-shadow: 0 1px 5px rgba(9, 9, 9, 0.2);
+section .modify:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 img{
@@ -73,29 +127,8 @@ img{
   margin: 0px 2px;
 }
 
-#heading{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  font-size: larger;
-  color: #003566;
-}
 
-#heading p {
-  font-size: 0.75em;
-  text-align: center;
-  margin: 0px 10px;
-  margin-top: 14px;
-}
-
-#heading h2{
-  font-family: cursive;
-  margin: 0;
-}
-
-#buttons .btn{
+.btn{
   border: 2px solid #f1c40f;
   background-color: #f9e493;
   border-radius: 20px;
@@ -104,9 +137,76 @@ img{
   margin: 3%;
 }
 
-#buttons .btn:hover{
+.btn:hover{
   border-color: black;
   background-color: #f1c40f;
   font-weight: bold;
   transform: scale(1.1);
+}
+
+/* Bill Heading */
+
+#billHeading {
+  text-transform: uppercase;
+  font-family: Arial;
+  letter-spacing: 1ch;
+}
+
+
+/* Viewreport */
+#viewreport{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#viewreport #viewreportStatus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#viewreport .btn{
+  border: 2px solid #f1c40f;
+  background-color: #f9e493;
+  border-radius: 20px;
+  font-size: 1rem;
+  padding: 0.5% 2%;
+  margin: 1%;
+}
+
+#viewreport .btn:hover{
+  border-color: black;
+  cursor: pointer;
+  background-color: #f1c40f;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+#viewreport #reportPrinterIcon:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#viewreport #reportDetails{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#viewreport #totalBill{
+  text-align: center;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+#totalOnHomePage {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
 }
