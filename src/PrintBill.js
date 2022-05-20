@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useReactToPrint } from "react-to-print";
 import Layout from './Layout';
+import Logo from './Assets/Images/logo.png'
 
 const PrintBill = React.forwardRef(() => {
 
@@ -25,8 +26,9 @@ const PrintBill = React.forwardRef(() => {
         <Layout>
             <div id='printbillPage'>
                 <div id='printbill' ref={componentRef}>
-                    <h1 className='billHeading'>Rajeshahi Foods & Hospitality</h1>
-                    <h3 className='billHeading'>PICT Canteen, Pune</h3>
+                    <img src={Logo} alt="logo" className='billLogo'/>
+                    <h2 className='billHeading'>Rajeshahi Foods & Hospitality</h2>
+                    <h3 className='billSubHeading'>PICT Canteen, Pune</h3>
                     <hr />
                     <div id='billDetails'>
                         <h4>Date : {today}</h4>
@@ -65,6 +67,7 @@ const PrintBill = React.forwardRef(() => {
                     </table>
                     <h3 id='billTotal'>Total: ₹ {data.totalcost}</h3>
                     <h3 id='billGreets'>Thank You!</h3>
+                    <h6 id='developers'>Project By : Saurabh C, Vinayak J, Amaan N, Mandar R</h6>
                 </div>
                 <button id='billButton' className='btn' onClick={Print}>Print</button>
             </div>

@@ -13,8 +13,24 @@
     justify-content: center;
 }
 
-#printbill #billHeading{
+#printbill #developers{
+    margin-top: 1%;
+}
+
+#printbill .billHeading, .billSubHeading{
     margin-bottom: 0;
+    text-align: center;
+}
+
+#printbill .billHeading{
+    margin: 0;
+    display: inline;
+}
+
+#printbill .billLogo{
+    width: 20%;
+    height: 20%;
+    margin-right: 3%;
 }
 
 #printbill hr {
