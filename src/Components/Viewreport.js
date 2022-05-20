@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
-import './App.css';
 import Layout from "./Layout";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { useReactToPrint } from "react-to-print";
-import Printer from "./Assets/Images/printer.png";
+import Printer from "../Assets/Images/Printer.png";
 
 function Viewreport() {
 
@@ -54,9 +53,9 @@ function Viewreport() {
                     </>) : (null)}
                 </div>
                 {(report) ? (<div id='reportDetails' ref={componentRef}>
-                    <h2 id='totalBill'>Total Bill : ₹ {reportdata.reportTotalCost}</h2>
-                    <h2>Date : {today}</h2>
-                    <table className='table'>
+                    <h2 id='viewreportHeading'>Total Bill : ₹ {reportdata.reportTotalCost}</h2>
+                    <h2 id='viewreportHeading'>Date : {today}</h2>
+                    <table id='viewreportTable'>
                         <thead>
                             <tr>
                                 <th>Sr</th>

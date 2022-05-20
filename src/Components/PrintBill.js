@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useReactToPrint } from "react-to-print";
 import Layout from './Layout';
-import Logo from './Assets/Images/logo.png'
+import Logo from '../Assets/Images/Logo.png'
 
 const PrintBill = React.forwardRef(() => {
 
@@ -22,6 +22,25 @@ const PrintBill = React.forwardRef(() => {
         content: () => componentRef.current
     });
 
+    const report = JSON.parse(localStorage.getItem("Report"));
+
+    const handlePrint = () => {
+        let reportItems = (report) ? (report.reportItems) : (data.items);
+        let reportTotal = (report) ? (0) : (data.totalcost);
+        let reportBillNo = (report) ? (report.reportBillNo + 1) : (1);
+        
+        if (report) {
+            for (let i = 0; i < 45; i++) {
+                reportItems[i].quantity += data.items[i].quantity;
+                reportItems[i].cost += data.items[i].cost;
+                reportTotal += reportItems[i].cost;
+            }
+        }
+        
+        localStorage.setItem("Report", JSON.stringify({ reportItems: reportItems, reportTotalCost: reportTotal, reportBillNo: reportBillNo }));
+        Print();
+    }
+
     return (
         <Layout>
             <div id='printbillPage'>
@@ -32,7 +51,7 @@ const PrintBill = React.forwardRef(() => {
                     <hr />
                     <div id='billDetails'>
                         <h4>Date : {today}</h4>
-                        <h4>Bill No. : {JSON.parse(localStorage.getItem("Report")).reportBillNo}</h4>
+                        <h4>Bill No. : {(report) ? (report.reportBillNo + 1) : (1)}</h4>
                     </div>
                     <hr />
                     <table className='billTable'>
@@ -67,9 +86,9 @@ const PrintBill = React.forwardRef(() => {
                     </table>
                     <h3 id='billTotal'>Total: ₹ {data.totalcost}</h3>
                     <h3 id='billGreets'>Thank You!</h3>
-                    <h6 id='developers'>Project By : Saurabh C, Vinayak J, Amaan N, Mandar R</h6>
+                    <h5 id='developers'>Project By : <br/> Saurabh Chidrewar, Vinayak Jamadar, Amaan Naikwadi, Mandar Remane</h5>
                 </div>
-                <button id='billButton' className='btn' onClick={Print}>Print</button>
+                <button id='billButton' className='btn' onClick={handlePrint}>Print</button>
             </div>
         </Layout>
     );

@@ -1,5 +1,5 @@
 body{
-  background: url('./Assets/Images/bg.png') no-repeat center center;
+  background: url('../Images/Bg.png') no-repeat center center;
   margin: 0;
   padding: 0;
 }
@@ -49,12 +49,12 @@ header .navsection{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   width: 50%;
 }
 
 header #navlinksection{
-  justify-content: end;
+  justify-content: flex-end;
   padding-right: 5%;
 }
 
@@ -75,7 +75,7 @@ header .navlinks:hover{
 #menu{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .table {
@@ -127,7 +127,6 @@ img{
   margin: 0px 2px;
 }
 
-
 .btn{
   border: 2px solid #f1c40f;
   background-color: #f9e493;
@@ -149,7 +148,7 @@ img{
 #billHeading {
   text-transform: uppercase;
   font-family: Arial;
-  letter-spacing: 1ch;
+  margin: 0;
 }
 
 
@@ -162,10 +161,7 @@ img{
 }
 
 #viewreport #viewreportStatus{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -192,18 +188,18 @@ img{
 }
 
 #viewreport #reportDetails{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#viewreport #totalBill{
   text-align: center;
   width: 100%;
+}
+
+#viewreport #reportDetails #viewreportHeading{
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+  margin: 1% 0;
+}
+
+#viewreport #viewreportTable{
+  margin: auto;
 }
 
 #totalOnHomePage {

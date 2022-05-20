@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Viewreport from "./Viewreport";
-import Team from "./Team";
-import PrintBill from "./PrintBill";
-import "./App.css";
-import "./Team.css";
-import "./PrintBill.css";
+import Home from "./Components/Home";
+import Viewreport from "./Components/Viewreport";
+import Team from "./Components/Team";
+import PrintBill from "./Components/PrintBill";
+import "./Assets/Styles/Home.css";
+import "./Assets/Styles/Team.css";
+import "./Assets/Styles/PrintBill.css";
 
 export default function App() {
   return (

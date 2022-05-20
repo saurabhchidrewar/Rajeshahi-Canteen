@@ -44,7 +44,18 @@ const ItemsData =
     { sr: 41, name: "चहा", quantity: 0, price: 10, cost: 0 },
     { sr: 42, name: "कॉफी", quantity: 0, price: 20, cost: 0 },
     { sr: 43, name: "बौर्नविटा", quantity: 0, price: 25, cost: 0 },
-    { sr: 44, name: "साधे दूध / हळदी दूध", quantity: 0, price: 20, cost: 0 }
+    { sr: 44, name: "साधे दूध / हळदी दूध", quantity: 0, price: 20, cost: 0 },
+    { sr: 45, name: "उत्तप्पा", quantity: 0, price: 25, cost: 0 },
+    { sr: 46, name: "कांदा उत्तप्पा", quantity: 0, price: 30, cost: 0 },
+    { sr: 47, name: "चीज कांदा उत्तप्पा", quantity: 0, price: 45, cost: 0 },
+    { sr: 48, name: "कांदा भजी", quantity: 0, price: 25, cost: 0 },
+    { sr: 49, name: "आलू पराठा", quantity: 0, price: 25, cost: 0 },
+    { sr: 50, name: "डाळ खिचडी", quantity: 0, price: 40, cost: 0 },
+    { sr: 51, name: "चटणी सँडविच", quantity: 0, price: 20, cost: 0 },
+    { sr: 52, name: "व्हेज सँडविच", quantity: 0, price: 30, cost: 0 },
+    { sr: 53, name: "व्हेज चीज सँडविच", quantity: 0, price: 45, cost: 0 },
+    { sr: 54, name: "व्हेज ग्रिल सँडविच", quantity: 0, price: 35, cost: 0 },
+    { sr: 55, name: "व्हेज चीज ग्रिल सँडविच", quantity: 0, price: 50, cost: 0 },
 ]
 
 export default ItemsData;

@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom"
-import './App.css';
 import Layout from "./Layout";
-import ItemsData from './ItemsData'
-import Add from './Assets/Images/plus.png';
-import Minus from './Assets/Images/minus-button.png'
+import ItemsData from '../Data/ItemsData'
+import Add from '../Assets/Images/Plus.png';
+import Minus from '../Assets/Images/Minus.png'
 
 function Home() {
     const [data, setData] = useState({ items: ItemsData, totalcost: 0 });
@@ -25,20 +24,6 @@ function Home() {
 
     const handlePrint = () => {
         navigate("/printbill", { state: data })
-        const report = JSON.parse(localStorage.getItem("Report"));
-        let reportItems = (report) ? (report.reportItems) : (data.items);
-        let reportTotal = (report) ? (0) : (data.totalcost);
-        let reportBillNo = (report) ? (report.reportBillNo + 1) : (1);
-
-        if (report) {
-            for (let i = 0; i < 45; i++) {
-                reportItems[i].quantity += data.items[i].quantity;
-                reportItems[i].cost += data.items[i].cost;
-                reportTotal += reportItems[i].cost;
-            }
-        }
-
-        localStorage.setItem("Report", JSON.stringify({ reportItems: reportItems, reportTotalCost: reportTotal, reportBillNo: reportBillNo }));
         handleReset();
     }
 
@@ -58,7 +43,7 @@ function Home() {
                     </thead>
                     <tbody>
                         {
-                            data.items.slice(0, 20).map((value, key) => {
+                            data.items.slice(0, 28).map((value, key) => {
                                 return (
                                     <tr key={key}>
                                         <td>{value.sr + 1}</td>
@@ -87,7 +72,7 @@ function Home() {
                     </thead>
                     <tbody>
                         {
-                            data.items.slice(20, 40).map((value, key) => {
+                            data.items.slice(28, 56).map((value, key) => {
                                 return (
                                     <tr key={key}>
                                         <td>{value.sr + 1}</td>
@@ -104,35 +89,6 @@ function Home() {
                 </table>
 
                 <span className='column'>
-                    <table className='last_col_table table'>
-                        <thead>
-                            <tr>
-                                <th>Sr</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Cost</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                data.items.slice(40, 46).map((value, key) => {
-                                    return (
-                                        <tr key={key}>
-                                            <td>{value.sr + 1}</td>
-                                            <td>{value.name}</td>
-                                            <td>{value.price}</td>
-                                            <td>{value.quantity}</td>
-                                            <td>{value.cost}</td>
-                                            <td><img src={Add} alt="addIcon" name={value.sr} className="modify" onClick={handleAdd} /><img src={Minus} alt="minusIcon" name={value.sr} className="modify" onClick={handleRemove} /></td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
-
                     <h3 id="billHeading">Bill</h3>
                     <table id='bill' className='last_col_table table'>
                         <thead>
