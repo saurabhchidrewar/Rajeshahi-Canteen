@@ -67,7 +67,9 @@ function Viewreport() {
                         </thead>
                         <tbody>
                             {
-                                report.reportItems.map((value, key) => {
+                                report.reportItems.filter(function (element) {
+                                    return element.quantity !== 0;
+                                }).map((value, key) => {
                                     return (
                                         <tr key={key}>
                                             <td>{value.sr + 1}</td>

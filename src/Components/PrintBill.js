@@ -30,7 +30,7 @@ const PrintBill = React.forwardRef(() => {
         let reportBillNo = (report) ? (report.reportBillNo + 1) : (1);
         
         if (report) {
-            for (let i = 0; i < 45; i++) {
+            for (let i = 0; i < data.items.length; i++) {
                 reportItems[i].quantity += data.items[i].quantity;
                 reportItems[i].cost += data.items[i].cost;
                 reportTotal += reportItems[i].cost;

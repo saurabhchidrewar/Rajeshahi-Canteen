@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import Layout from "./Layout";
 import ItemsData from '../Data/ItemsData'
@@ -9,11 +9,11 @@ function Home() {
     const [data, setData] = useState({ items: ItemsData, totalcost: 0 });
 
     const handleAdd = (e) => {
-        setData({ items: data.items.map(x => (x.sr == e.target.name) ? { ...x, quantity: x.quantity + 1, cost: (x.cost + x.price) } : x), totalcost: data.totalcost + data.items[e.target.name].price });
+        setData({ items: data.items.map(x => (x.sr === parseInt(e.target.name)) ? { ...x, quantity: x.quantity + 1, cost: (x.cost + x.price) } : x), totalcost: data.totalcost + data.items[e.target.name].price });
     }
 
     const handleRemove = (e) => {
-        setData({ items: data.items.map(x => ((x.sr == e.target.name) && (x.quantity != 0)) ? { ...x, quantity: x.quantity - 1, cost: (x.cost - x.price) } : x), totalcost: (data.items[e.target.name].quantity != 0) ? (data.totalcost - data.items[e.target.name].price) : (data.totalcost) });
+        setData({ items: data.items.map(x => ((x.sr === parseInt(e.target.name)) && (x.quantity !== 0)) ? { ...x, quantity: x.quantity - 1, cost: (x.cost - x.price) } : x), totalcost: (data.items[e.target.name].quantity !== 0) ? (data.totalcost - data.items[e.target.name].price) : (data.totalcost) });
     }
 
     const handleReset = () => {
@@ -103,10 +103,10 @@ function Home() {
                         <tbody>
                             {
                                 data.items.filter(function (element) {
-                                    return element.quantity != 0;
+                                    return (element.quantity !== 0);
                                 }).map((value, key) => {
                                     return (
-                                        (value.quantity != 0) ?
+                                        (value.quantity !== 0) ?
                                             (<tr key={key}>
                                                 <td>{key+1}</td>
                                                 <td>{value.name}</td>
