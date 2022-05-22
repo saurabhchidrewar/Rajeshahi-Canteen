@@ -67,10 +67,10 @@ const PrintBill = React.forwardRef(() => {
                         <tbody className='billTabletbody'>
                             {
                                 data.items.filter(function (element) {
-                                    return element.quantity != 0;
+                                    return element.quantity !== 0;
                                 }).map((value, key) => {
                                     return (
-                                        (value.quantity != 0) ?
+                                        (value.quantity !== 0) ?
                                             (<tr key={key} className='billTabletr'>
                                                 <td className='billTabletd'>{key + 1}</td>
                                                 <td className='billTabletd'>{value.name}</td>
