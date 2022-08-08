@@ -51,7 +51,6 @@ const PrintBill = React.forwardRef(() => {
                     <hr />
                     <div id='billDetails'>
                         <h4>Date : {today}</h4>
-//                         <h4>Bill No. : {(report) ? (report.reportBillNo + 1) : (1)}</h4>
                     </div>
                     <hr />
                     <table className='billTable'>
